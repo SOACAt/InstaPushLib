@@ -1,5 +1,5 @@
 # InstaPushLib
-C# Implementation from [InstaPush API](https://instapush.im/developer/rest).
+[InstaPush API](https://instapush.im/developer/rest) C# implementation.
 
 ##Examples
 
