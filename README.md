@@ -1,6 +1,7 @@
 # InstaPushLib
+C# Implementation from [InstaPush API](https://instapush.im/developer/rest).
 
-Examples
+##Examples
 
 ```c#
 // Apps - List
@@ -33,5 +34,34 @@ foreach(SOACat.InstaPushLib.dto.ResponseEvent r in res.Result){
 
 ```
 
+```c#
+// Events - Add
+var add= new SOACat.InstaPushLib.Events("https://api.instapush.im/v1/", "[Api Key]", "[Api Secret]");
+var res=add.AddAsync(new SOACat.InstaPushLib.dto.EventAddRequest(){ 
+                title="Register", 
+                trackers=new string[]{"email","name"}, 
+                message="{email} registered with name {name}."});
+res.Wait();
+
+Console.WriteLine(res.Result.msg);
+
+...
+
+```
+
+```c#
+// Notifications - Send
+var noti = new SOACat.InstaPushLib.Notifications("https://api.instapush.im/v1/", "[Api Key]", "[Api Secret]");
+var track = new Dictionary<string, string>();
+track.Add("email", "a@a.com");
+track.Add("name", "Aston Martin");
+var res = noti.SendAsync(new NotificactionRequest() { @event = "Register", trackers = track });
+res.Wait();
+Console.WriteLine(res.Result.msg);
+
+...
+
+```
 
 
+[See More](https://instapush.im/)
