@@ -23,8 +23,16 @@ namespace SOACat.InstaPushLib.net
 
                 HttpResponseMessage response = await client.PostAsync(method, postBody);
 
-                response.EnsureSuccessStatusCode();
-                res = await response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                {
+                    res = await response.Content.ReadAsStringAsync();
+                }
+                else {
+                    res = response.StatusCode.ToString();
+                }
+
+                //response.EnsureSuccessStatusCode();
+                
 
             }
 

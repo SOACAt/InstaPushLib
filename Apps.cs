@@ -31,6 +31,10 @@ namespace SOACat.InstaPushLib
             {
                 ret= JsonConvert.DeserializeObject<ResponseApp[]>(res);
             }
+            else
+            {
+                ret= (ResponseApp[]) Shared.BadRequest();
+            }
 
             return ret;
         }
@@ -44,6 +48,10 @@ namespace SOACat.InstaPushLib
             if (!string.IsNullOrEmpty(res))
             {
                 ret = JsonConvert.DeserializeObject<ResponseAppAdd>(res);
+            }
+            else
+            {
+                ret = (ResponseAppAdd) Shared.BadRequest()[0];
             }
 
             return ret;

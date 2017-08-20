@@ -30,11 +30,15 @@ namespace SOACat.InstaPushLib
             {
                 ret = JsonConvert.DeserializeObject<ResponseEvent[]>(res);
             }
+            else
+            {
+                ret = (ResponseEvent[])Shared.BadRequest();
+            }
 
             return ret;
         }
 
-        public async Task<Response> AddAsync(EventAddRequest request)
+        public async Task<ResponseAppAdd> AddAsync(EventAddRequest request)
         {
             ResponseAppAdd ret = null;
             string content = JsonConvert.SerializeObject(request);
@@ -43,6 +47,10 @@ namespace SOACat.InstaPushLib
             if (!string.IsNullOrEmpty(res))
             {
                 ret = JsonConvert.DeserializeObject<ResponseAppAdd>(res);
+            }
+            else
+            {
+                ret =(ResponseAppAdd)Shared.BadRequest()[0];
             }
 
             return ret;

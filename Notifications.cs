@@ -36,6 +36,9 @@ namespace SOACat.InstaPushLib
             {
                 ret = JsonConvert.DeserializeObject<Response>(res);
             }
+            else{
+                ret = Shared.BadRequest()[0];
+            }
 
             return ret;
         }

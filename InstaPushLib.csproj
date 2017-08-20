@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <RootNamespace>SOACat.InstaPushLib</RootNamespace>
+    <Description>Client Instapush API</Description>
+    <Copyright>2017</Copyright>
+    <Authors>SOACat</Authors>
+    <Company>SOACat</Company>
+    <RepositoryUrl>https://github.com/SOACAt/InstaPushLib/blob/master/README.md</RepositoryUrl>
+    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Bad Request Control</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
