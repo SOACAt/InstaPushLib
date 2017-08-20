@@ -8,9 +8,10 @@
     <Authors>SOACat</Authors>
     <Company>SOACat</Company>
     <RepositoryUrl>https://github.com/SOACAt/InstaPushLib/blob/master/README.md</RepositoryUrl>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <PackageReleaseNotes>Bad Request Control</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/SOACAt/InstaPushLib/blob/master/README.md</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

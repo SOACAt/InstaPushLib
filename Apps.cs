@@ -21,7 +21,7 @@ namespace SOACat.InstaPushLib
             _token = token;
         }
 
-        public async Task<ResponseApp[]> ListAsync()
+        public async Task<Response[]> ListAsync()
         {
             ResponseApp[] ret = null;
             string res = await net.Http.GetAsync(_apiUrl, LIST , new net.UserIdentity() { Token = _token });
@@ -39,7 +39,7 @@ namespace SOACat.InstaPushLib
             return ret;
         }
 
-        public async Task<ResponseAppAdd> AddAsync(AppAddRequest request)
+        public async Task<Response> AddAsync(AppAddRequest request)
         {
             ResponseAppAdd ret = null;
             string content = JsonConvert.SerializeObject(request);

@@ -38,19 +38,19 @@ namespace SOACat.InstaPushLib
             return ret;
         }
 
-        public async Task<ResponseAppAdd> AddAsync(EventAddRequest request)
+        public async Task<Response> AddAsync(EventAddRequest request)
         {
-            ResponseAppAdd ret = null;
+            Response ret = null;
             string content = JsonConvert.SerializeObject(request);
             string res = await net.Http.PostAsync(_apiUrl, ADD, new net.AppIdentity() { Appid=_appid, Appsecret=_appsecret }, content);
 
             if (!string.IsNullOrEmpty(res))
             {
-                ret = JsonConvert.DeserializeObject<ResponseAppAdd>(res);
+                ret = JsonConvert.DeserializeObject<Response>(res);
             }
             else
             {
-                ret =(ResponseAppAdd)Shared.BadRequest()[0];
+                ret =Shared.BadRequest()[0];
             }
 
             return ret;
